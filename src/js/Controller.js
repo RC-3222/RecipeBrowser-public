@@ -24,16 +24,16 @@ export default class Controller {
 
 
     _handleKeydown(event) {
-        switch (event.key) {
-            case 'n': {
+        switch (event.keyCode) {
+            case 78: {
                 this.pressedN = true;
                 break
             }
-            case 'c': {
+            case 67: {
                 this.pressedC = true;
                 break
             }
-            case 'm': {
+            case 77: {
                 if (this.pressedN && this.model.state.pageName !== 'Main') {
                     this.router.switchToMainPage()
                 }
@@ -42,35 +42,34 @@ export default class Controller {
                 }
                 break
             }
-            case 'w': {
+            case 87: {
                 if (this.pressedN && this.model.state.pageName !== 'Work')
                     this.router.switchToWorkPage()
                 break
             }
-            case 's': {
+            case 83: {
                 if (this.pressedN && this.model.state.pageName === 'Main')
                     this.router.switchToSecretErrorPage()
                 break
             }
             default: {
-                //console.log(event.key)
+                //console.log(event.keyCode)
             }
         }
-        if (event.key === 'n') this.pressedN = true;
     }
 
     _handleKeyup(event) {
-        switch (event.key) {
-            case 'n': {
+        switch (event.keyCode) {
+            case 78: {
                 this.pressedN = false;
                 break
             }
-            case 'c': {
+            case 67: {
                 this.pressedC = false;
                 break
             }
             default: {
-                //console.log(event.key)
+                //console.log(event.keyCode)
             }
         }
     }
