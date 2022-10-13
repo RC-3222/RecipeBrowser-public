@@ -1,0 +1,27 @@
+$small-width: 766px;
+$small-height: 400px;
+$super-small-width: 240px;
+
+@mixin small-width {
+  @media (max-width: $small-width - 0.001px) {
+    @content
+  }
+}
+
+@mixin super-small-width {
+  @media (max-width: $super-small-width - 0.001px) {
+    @content
+  }
+}
+
+@mixin wide-screen {
+  @media (min-width: $small-width) {
+    @content
+  }
+}
+
+@mixin small-width-height {
+  @media (max-height: $small-height) and (max-width: $small-width - 0.001px) {
+    @content
+  }
+}

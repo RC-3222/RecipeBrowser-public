@@ -1,0 +1,19 @@
+@use "../variables" as *;
+@use "../adaptiveness" as *;
+// логотип (h1 с таким классом)
+.logo {
+  /*display: inline-block;*/
+  // адаптивный размер текста
+  font-size: min(12vw, 1.3rem);
+  //font-size: 1.3rem;
+  font-weight: 700;
+
+  span {
+    //color: $clr-red-light;
+    font-weight: 400;
+  }
+
+  @include super-small-width {
+    display: none;
+  }
+}

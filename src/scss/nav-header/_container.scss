@@ -1,0 +1,56 @@
+@use "../variables" as *;
+@use "../adaptiveness" as *;
+
+.nav-wrapper {
+  position: relative;
+  z-index: 10;
+
+  font-family: 'Montserrat', sans-serif;
+
+  width: 100%;
+  padding: 1em clamp(3%, 7.5em, 5%);
+  //padding: 1em min(3em, 7.5%);
+  // TODO: нужна ли тут высота? (ещё вопрос)
+  height: $nav-height;
+
+  /*
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;*/
+  // чтобы между правой и левой частью было место
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+
+  background: $clr-black;
+  color: $clr-white;
+  border-bottom: $border-solid-thin-white;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
+
+  .sticky-nav & {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
+  &__left-part {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    gap: min(2em, 5vw);
+
+    @include small-width {
+      width: 80%;
+    }
+    //justify-content: space-between;
+  }
+
+  &__right-part {
+    display: flex;
+    align-items: center;
+    gap: min(0.75em, 12vw)
+  }
+
+}

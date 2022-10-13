@@ -1,0 +1,56 @@
+:root {
+  --clr-primary: #222;
+
+  --size-nav-height: 4.5em;
+}
+
+$font-weight: (
+        "regular": 400,
+        "medium": 500,
+        "bold": 700,
+        "black": 900,
+);
+
+$clr-black: #000;
+$clr-black-secondary: #222;
+
+$clr-flame-orange: hsl(20,90%,53%);
+$clr-flame-orange-shadow: hsla(20,90%,53%, 0.5);
+$clr-flame-yellow: hsl(60,90%,51%);
+
+$clr-black-semi-transparent: rgba(11,11,11,0.5);
+$clr-white: #fff;
+$clr-white-secondary: #ddd;
+$clr-white-secondary-light: #eee;
+
+//$clr-red-standard: #922;
+//$clr-red-light: #b33;
+//$clr-red-lightest: #e33;
+
+$clr-red-standard: hsl(0, 75%, 30%);
+$clr-red-light: hsl(0, 75%, 37.5%);
+$clr-red-lightest: hsl(0, 75%, 45%);
+
+$clr-primary: var(--clr-primary);
+
+$clr-shadow-heavy: rgba(0, 0, 0, 0.4);
+$clr-shadow-light: rgba(0, 0, 0, 0.2);
+
+$border-solid-thin-white: 0.125em solid $clr-white;
+$border-solid-thin-black: 0.125em solid $clr-black;
+$border-solid-thin-currentColor: 0.125em solid currentColor;
+$border-solid-thinner-currentColor: 0.1em solid currentColor;
+$border-solid-thinner-white: 0.1em solid $clr-white;
+$border-solid-thin-transparent: 0.125em solid rgba(0, 0, 0, 0);
+$border-solid-thinner-transparent: 0.1em solid rgba(0, 0, 0, 0);
+
+$nav-height: var(--size-nav-height);
+
+$clr-transition: color 350ms linear, background-color 350ms linear;
+$clr-transition-fast: color 250ms linear, background-color 250ms linear;
+
+:export {
+  clr-black: $clr-black;
+  clr-white: $clr-white;
+  clr-red: $clr-red-standard;
+}

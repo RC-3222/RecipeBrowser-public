@@ -1,0 +1,225 @@
+@use "../variables" as *;
+@use "../adaptiveness" as *;
+
+.recipe {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  font-family: 'Montserrat', sans-serif;
+
+  &__header {
+    width: 100%;
+    height: 22rem;
+    overflow: hidden;
+    background-color: #000;
+
+    display: grid;
+    grid-template-columns: 100%;
+
+    isolation: isolate;
+
+    place-items: center;
+    place-content: center;
+
+    border-bottom: $border-solid-thin-white;
+    &__bg-img {
+      grid-column: 1;
+      grid-row: 1;
+
+      width: 125%;
+      height: 125%;
+
+      opacity: 0.5;
+      filter: blur(4px);
+    }
+    &__title {
+      background-color: rgba(0,0,0,0.5);
+      padding: 0.25em 0.5em;
+      border-radius: 0.5em;
+      border: $border-solid-thin-currentColor;
+
+      max-width: 80%;
+      position: relative;
+      z-index: 10;
+
+      grid-column: 1;
+      grid-row: 1;
+
+      text-align: center;
+      font-family: Montserrat, sans-serif;
+      font-size: min(2rem,8vw);
+      color: $clr-white;
+    }
+  }
+  &__ingredients {
+    width: 100%;
+    padding: 1.2em min(2rem, 12vw);
+    font-size: min(1rem, 8vw);
+
+    background-color: $clr-white-secondary-light;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__title {
+      font-size: min(1.2rem, 10vw);
+      border-bottom: $border-solid-thinner-currentColor;
+      margin-bottom: 0.8em;
+    }
+  }
+
+  &__description {
+    padding: 1em 0.5em;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 90%;
+
+    &__text {
+      font-size: min(1rem, 8vw);
+    }
+
+    &__title {
+      font-size: min(1.2rem, 10vw);
+      border-bottom: $border-solid-thinner-currentColor;
+      margin-bottom: 0.8em;
+    }
+  }
+
+
+  &__links {
+    padding: 1em 0.5em;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+
+    background-color: $clr-white-secondary;
+    color: $clr-black;
+
+    &__container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1em;
+      font-size: min(1rem, 8vw);
+
+      & > a {
+        text-decoration: none;
+
+        font-size: min(1rem, 8vw);
+        font-weight: map-get($font-weight, medium);
+
+        color: $clr-red-light;
+      }
+    }
+
+    &__title {
+      font-size: min(1.2rem, 10vw);
+      border-bottom: $border-solid-thinner-currentColor;
+      margin-bottom: 0.8em;
+    }
+  }
+
+  &__bookmarking {
+    padding: 1em 0.5em;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+
+    background-color: $clr-black;
+    color: $clr-white;
+
+    position: relative;
+    z-index: 2;
+
+    border-top: $border-solid-thin-currentColor;
+    border-bottom: $border-solid-thin-currentColor;
+    box-shadow: 0 0 15px 0 $clr-shadow-heavy;
+
+    &__text {
+      font-size: min(1rem, 8vw);
+    }
+
+    &__title {
+      font-size: min(1.2rem, 10vw);
+      border-bottom: $border-solid-thinner-currentColor;
+      margin-bottom: 0.8em;
+    }
+    &__button {
+      margin-top: 1em;
+      background-color: $clr-white;
+      color: $clr-black;
+      border: $border-solid-thinner-currentColor;
+
+      border-radius: 0.8em;
+
+
+      font-family: 'Montserrat', sans-serif;
+      font-weight: map-get($font-weight, medium);
+      font-size: min(1.1rem, 9vw);
+
+      width: min(80%,8rem);
+      height: auto;
+      padding: 0.3em min(10%,0.5em);
+
+      outline: 0;
+      outline-offset: 0;
+
+      transition: border 400ms ease-in-out,
+      color 400ms ease-in-out,
+      background-color 400ms ease-in-out,
+      outline 400ms ease-in-out,
+      outline-offset 400ms ease-in-out;
+
+      &:hover,
+      &:focus-visible {
+        background-color: $clr-black;
+        color: $clr-white;
+        outline: $border-solid-thinner-currentColor;
+        outline-offset: 0.2rem;
+      }
+    }
+  }
+
+  &__ingredient-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8em 6rem;
+    list-style: none;
+    place-content: center;
+
+    @include small-width {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__ingredient {
+    display: flex;
+    color: $clr-black;
+
+    &__icon {
+      height: min(1rem, 8vw);
+      width: min(1rem, 8vw);
+      fill: currentColor;
+      margin-right: 0.8rem;
+      flex: 0 0 auto;
+      margin-top: 0.1rem;
+
+    }
+
+    &__text {
+      &__title {
+        font-weight: map-get($font-weight,medium);
+      }
+    }
+  }
+}

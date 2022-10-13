@@ -1,0 +1,71 @@
+@use "variables" as *;
+@use "adaptiveness" as *;
+
+.audio-player {
+  background-color: $clr-black-secondary;
+  color: $clr-white-secondary-light;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-direction: column;
+  gap: 1.5em;
+
+  width: 100%;
+
+  padding: 2em;
+  border: 0.2rem solid currentColor;
+
+  &__visualizer {
+
+    margin: min(1rem, 8vw);
+
+    height: min(80vmin, 32rem);
+    width: min(80%, 32rem);
+
+    overflow: hidden;
+    border-radius: 4rem;
+
+    outline: min(1rem, 8vw) solid $clr-white-secondary-light;
+
+    background-color: $clr-black;
+
+    &__canvas {
+      background-color: $clr-black;
+    }
+  }
+
+  &__player {
+    width: min(95%,24rem);
+  }
+
+  &__file-chooser {
+    opacity: 0;
+    width: 0.1px;
+    height: 0.1px;
+    position: absolute;
+
+    &-container {
+      position: relative;
+    }
+
+    &-label {
+      padding: 0.25em 0.5em;
+
+      border-radius: 1em;
+      background-color: $clr-white-secondary-light;
+      color: $clr-black-secondary;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-family: Montserrat, sans-serif;
+      font-size: min(1rem, 5vw);
+      font-weight: map-get($font-weight,medium);
+      cursor: pointer;
+      transition: all .2s ease-in-out;
+    }
+  }
+}

@@ -1,0 +1,106 @@
+@use "../variables" as *;
+@use "../adaptiveness" as *;
+
+.search {
+  flex-shrink: 0;
+  --size: 3rem;
+  width: var(--size);
+  height: var(--size);
+
+  color: $clr-white;
+  border: 0;
+  border: $border-solid-thin-transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 3em;
+  overflow: hidden;
+  font-size: 1.25rem;
+  position: relative;
+  // margin-left: auto;
+  transition: width 500ms cubic-bezier(0.18, 0.89, 0.32, 1.28), $clr-transition, border 350ms linear;
+  padding: 0.125em;
+
+  &__icon {
+    //alignment-baseline: central;
+    height: 80%;
+    width: 80%;
+    fill: currentColor;
+  }
+
+  &__submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    //flex-grow: 1;
+
+
+    background: 0;
+    border: $border-solid-thinner-transparent;
+    //border: $border-solid-thin-currentColor;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: border 250ms linear, background 250ms ease-out, $clr-transition-fast;
+    width: calc(var(--size) - 0.4em);
+    height: calc(var(--size) - 0.4em);
+    color: $clr-white;
+  }
+
+  &__input {
+    font-size: 1.2rem;
+    width: 100%;
+
+    padding-left: 0.5em;
+
+    position: absolute;
+    inset: auto;
+
+    border: 0;
+    outline: 0;
+    z-index: 2;
+    background: transparent;
+    opacity: 0;
+    cursor: pointer;
+
+    color: $clr-white;
+  }
+
+  &:focus-within {
+    // box-shadow: 0 0 5px var(--clr-primary);
+    width: min(100%, 20rem);
+    padding-left: 0.5em;
+
+    border: $border-solid-thin-currentColor;
+
+    .search__input {
+      position: initial;
+      z-index: initial;
+      cursor: initial;
+
+      opacity: 1;
+      width: calc(100% - var(--size));
+    }
+
+    .search__submit {
+      background: $clr-red-standard;
+      color: $clr-white;
+      box-shadow: 0 0 10px rgba(255, 22, 22, .15);
+      margin-left: auto;
+      border: $border-solid-thinner-currentColor;
+      // transition: transform 500ms ease-out;
+
+      &:hover,
+      &:focus {
+        background: $clr-red-light;
+        outline: 0;
+        box-shadow: 0 0 10px rgba(255, 22, 22, .65);
+      }
+    }
+  }
+}
+

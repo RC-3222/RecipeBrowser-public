@@ -1,0 +1,16 @@
+@forward "base";
+@forward "nav-header";
+@forward "sections";
+@forward "workpage";
+@forward "audioplayer";
+
+@use "adaptiveness" as *;
+@use "variables" as *;
+
+body {
+  //background: $clr-white;
+
+  overflow-x: hidden;
+  //font-family: 'Montserrat', sans-serif;
+  //min-height: 200vh;
+}

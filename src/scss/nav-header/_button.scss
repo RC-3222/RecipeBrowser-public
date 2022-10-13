@@ -1,0 +1,56 @@
+@use "../variables" as *;
+@use "../adaptiveness" as *;
+
+.button {
+  --size: 3rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.5rem;
+
+  flex-shrink: 0;
+
+  background: transparent;
+  cursor: pointer;
+  border: 0;
+
+  box-shadow: none;
+
+  transition: $clr-transition-fast, border 200ms linear;
+  width: calc(var(--size) - 0.4em);
+  height: calc(var(--size) - 0.4em);
+  color: $clr-white;
+
+  &__icon {
+    height: 80%;
+    width: 80%;
+    fill: currentColor;
+  }
+
+
+  &-home {
+
+    &:hover, &:focus-visible {
+      color: $clr-red-lightest;
+    }
+
+    @include super-small-width {
+
+      position: absolute;
+      top: 100%;
+      left: 0;
+      padding: 0.125rem;
+
+      background-color: $clr-black;
+      border: $border-solid-thin-currentColor;
+      border-bottom-right-radius: 1rem;
+
+      &:hover, &:focus-visible {
+        color: $clr-white;
+        background-color: $clr-red-standard;
+      }
+    }
+  }
+}

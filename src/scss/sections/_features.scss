@@ -1,0 +1,104 @@
+@use "../variables" as *;
+@use "../adaptiveness" as *;
+
+.features-section {
+  --icon-size: 3rem;
+  width: 100%;
+  padding: min(5%,4rem);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $clr-white;
+
+  &__title {
+    font-size: min(1.8rem,3.5vw);
+    font-family: Montserrat, sans-serif;
+    font-weight: map-get($font-weight, bold);
+
+    margin-bottom: 2rem;
+    border-bottom: $border-solid-thin-currentColor;
+
+    @media (max-width: 720px - 0.001px) {
+      font-size: min(1.8rem, 12vw);
+    }
+  }
+
+  &__card-container {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-around;
+    gap: 1.5rem;
+
+
+    @media (max-width: 720px - 0.001px) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 16rem;
+    padding: 1.5em 2em;
+
+    color: $clr-white;
+    background-color: $clr-black;
+
+    border: $border-solid-thin-currentColor;
+    border-radius: 1em;
+
+    outline: $border-solid-thinner-currentColor;
+    outline-offset: -0.4em;
+
+    box-shadow: 0 0 15px 2px $clr-shadow-heavy;
+
+
+    @media (max-width: 720px - 0.001px) {
+      width: min(20rem, 90%);
+    }
+
+    &__icon {
+      width: var(--icon-size);
+      height: var(--icon-size);
+      fill: $clr-white;
+      margin-bottom: 1em;
+    }
+    &__title {
+      text-align: center;
+
+      font-size: min(1.2rem, 3vw);
+      font-family: Montserrat, sans-serif;
+      font-weight: map-get($font-weight, bold);
+
+      width: 100%;
+      border-bottom: $border-solid-thinner-currentColor;
+
+      margin-bottom: 0.5em;
+
+      @media (max-width: 720px - 0.001px) {
+        font-size: min(1.4rem, 6vw);
+      }
+    }
+    &__text {
+      text-align: center;
+
+      font-size: min(1rem,2vw);
+      font-family: Montserrat,sans-serif;
+      font-weight: map-get($font-weight, regular);
+      color: $clr-white-secondary;
+
+      strong {
+        color: $clr-white;
+      }
+      @media (max-width: 720px - 0.001px) {
+        font-size: min(1.2rem, 4vw);
+      }
+    }
+  }
+
+}

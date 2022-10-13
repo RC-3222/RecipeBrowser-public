@@ -1,0 +1,9 @@
+@forward "card";
+@forward "grid";
+@forward "loading";
+@forward "recipe";
+@forward "error";
+
+:root {
+  --width-card: min(14rem, 90%);
+}

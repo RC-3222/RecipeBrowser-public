@@ -1,0 +1,130 @@
+@use "../../variables" as *;
+@use "../../adaptiveness" as *;
+
+.site-nav {
+  display: flex;
+  // wide screens
+  // список в пределах nav-header
+  @include wide-screen {
+    width: 100%;
+    background: transparent;
+  }
+
+  // small screens
+  // перемещение списка под nav-header
+  @include small-width {
+    position: absolute;
+    top: $nav-height;
+    right: 0;
+
+    background: $clr-black;
+
+    clip-path: circle(0 at top right);
+    transition: clip-path ease-in-out 300ms;
+
+    width: min(50%, 10em);
+
+    overflow: hidden;
+    border-bottom-left-radius: 1em;
+    box-shadow: 0 0 10px 0 $clr-shadow-heavy;
+
+    border-bottom: $border-solid-thin-white;
+    //border-right: $border-solid-thin-white;
+    border-left: $border-solid-thin-white;
+
+    .open & {
+      clip-path: circle(250% at top right);
+    }
+
+  }
+
+  @include small-width-height {
+    width: 100%;
+    .open & {
+      clip-path: circle(350% at top right);
+    }
+  }
+  // -----------------------------------------
+
+  &__list {
+    list-style: none;
+    display: flex;
+
+
+    &__item {
+      border-bottom: $border-solid-thin-white;
+      flex: 1;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      @include wide-screen {
+        border: none;
+      }
+      @include small-width-height {
+        border: none;
+      }
+    }
+
+    @include small-width {
+      width: 100%;
+      flex-direction: column;
+    }
+    @include small-width-height {
+      width: 100%;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+  }
+
+  &__link {
+    // чтобы занимало весь list__item
+    display: block;
+
+    color: $clr-white;
+    padding: 1em 3em 1em 1em;
+
+    text-transform: uppercase;
+    text-decoration: none;
+
+    transition: color 200ms linear, background-color 200ms linear;
+
+    &:hover, &:focus-visible {
+      background-color: $clr-red-standard;
+      @include wide-screen {
+        color: $clr-red-lightest;
+        background: transparent;
+      }
+    }
+
+    @include wide-screen {
+      padding: 0;
+      margin-left: 2em;
+    }
+    @include small-width-height {
+      text-align: center;
+      padding: 0.25em;
+    }
+
+  }
+
+  // иконки
+  /*
+  &--icon {
+    display: inline-block;
+    font-size: 1.5em;
+    margin-right: 1em;
+    width: 1.1em;
+    text-align: right;
+    color: $clr-white;
+
+    @include wide-screen {
+      display: none;
+    }
+  }
+  */
+
+  /*   display: none; */
+}

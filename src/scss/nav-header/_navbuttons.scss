@@ -1,0 +1,41 @@
+@use "../variables" as *;
+@use "../adaptiveness" as *;
+
+.nav-button {
+  font-size: 1.2rem;
+  padding: 0.5em 1em;
+
+  color: $clr-black;
+  background-color: $clr-white;
+  border: $border-solid-thin-currentColor;
+  border-radius: 0.75em;
+
+  transition: color 350ms linear, background-color 350ms linear, border 350ms ease-in-out;
+
+  cursor: pointer;
+
+  &:hover, &:focus-visible {
+    color: $clr-white;
+    background-color: $clr-red-standard;
+  }
+
+  @include small-width {
+    justify-self: end;
+    border-radius: 50%;
+    font-size: 1.3rem;
+    padding: 0.5em;
+  }
+
+  // TODO: ещё подумать насчёт того, когда отключать
+  &__full-title {
+    @include small-width {
+      display: none;
+    }
+  }
+
+  &__icon-only {
+    @include wide-screen {
+      display: none;
+    }
+  }
+}

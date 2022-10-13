@@ -1,0 +1,32 @@
+@use "../variables" as *;
+
+.error {
+  margin: 2rem;
+
+  color: $clr-red-light;
+  background-color: $clr-white-secondary-light;
+  border: $border-solid-thin-currentColor;
+  border-radius: 1rem;
+
+  width: 80%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &__text {
+    padding: 0.25em 1em;
+    font-size: min(1rem, 8vw);
+    color: $clr-black-secondary;
+  }
+
+  &__title {
+    text-align: center;
+    width: 100%;
+    padding: 0 1em;
+    margin: 0.25em 0;
+    font-size: min(1.2rem, 10vw);
+    border-bottom: $border-solid-thin-currentColor;
+  }
+}

@@ -1,0 +1,72 @@
+@use "../variables" as *;
+@use "../adaptiveness" as *;
+
+.contacts-section {
+  width: 100%;
+  padding: 1rem min(5%, 4rem);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: $clr-white-secondary;
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__title {
+      text-align: center;
+
+      color: $clr-black;
+      font-size: min(1.5rem, 4vw);
+      font-family: Montserrat, sans-serif;
+      font-weight: map-get($font-weight, bold);
+
+      border-bottom: $border-solid-thinner-currentColor;
+
+      @media (max-width: 720px - 0.001px) {
+        font-size: min(1.5rem, 6vw);
+      }
+
+      margin-bottom: 0.5em;
+    }
+
+    &__text {
+      text-align: center;
+      color: $clr-black-secondary;
+
+      font-size: min(0.8rem, 1.6vw);
+      font-family: Montserrat, sans-serif;
+      font-weight: map-get($font-weight, regular);
+
+      margin-bottom: 0.8em;
+
+      strong {
+        color: $clr-white;
+      }
+
+      @media (max-width: 720px - 0.001px) {
+        font-size: min(0.8rem, 3.2vw);
+      }
+    }
+
+    margin-bottom: 1rem;
+  }
+
+  &__link {
+    text-decoration: none;
+
+    font-size: min(1.1rem, 4.5vw);
+    font-family: Montserrat, sans-serif;
+    font-weight: map-get($font-weight, medium);
+
+    color: $clr-red-light;
+
+    &-container {
+      display: flex;
+      gap: 1em;
+    }
+  }
+}
