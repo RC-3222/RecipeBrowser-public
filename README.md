@@ -1,3 +1,3 @@
-# proj-rep
+# RecipeBrowser (Personal project 1)
 
-https://rc-3222.github.io/proj-rep/
+https://rc-3222.github.io/RecipeBrowser-public/
