@@ -3,7 +3,6 @@ export default class MainPageController {
         this.parent = parent;
     }
 
-
     async _randomStartHandler() {
         try {
             const recipeInfo = await this.parent.model.apiWorker.getRecipeInfoRandom();

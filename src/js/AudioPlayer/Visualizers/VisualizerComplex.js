@@ -4,6 +4,11 @@ export default class VisualizerComplex extends Visualizer {
     constructor(ctx, width, height) {
         super(ctx, width, height);
         this.addI = 0
+
+        this.ctx.lineCap = 'round'
+        this.ctx.shadowOffsetX = 0
+        this.ctx.shadowOffsetY = 0
+        this.ctx.shadowBlur = 20
     }
 
     _drawVisualizer() {
@@ -18,11 +23,6 @@ export default class VisualizerComplex extends Visualizer {
 
             this.ctx.translate(this.width/2, this.height/2)
             this.ctx.rotate(i + Math.PI*4 / this.bufferLength + this.addI * 0.01);
-
-            this.ctx.lineCap = 'round'
-            this.ctx.shadowOffsetX = 0
-            this.ctx.shadowOffsetY = 0
-            this.ctx.shadowBlur = 20
 
             this.ctx.shadowColor = `hsl(${i*4 + this.addI}, 100%, 50%)`
             this.ctx.strokeStyle = `hsl(${i*4 + this.addI}, 100%, 50%)`

@@ -152,7 +152,7 @@ export default class MainPageView {
                     </svg>
                     <h3 class="features-section__card__title">Bookmarks</h3>
                     <p class="features-section__card__text">
-                        Found something interesting, but can't cook it now and want to come back later? No problem!
+                        Found something interesting, but can't cook it right now and want to come back later? No problem!
                         We have our own <strong>bookmarking system</strong> for such cases.
                     </p>
                 </div>
